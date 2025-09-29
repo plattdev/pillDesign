@@ -7,6 +7,7 @@
 body{
     font-family: Arial, sans-serif;
     background-color: rgb(236, 242, 244);
+    height: 100dvh;
 }
 
 header{
@@ -18,18 +19,48 @@ main{
     display: grid;
     grid-template-columns: 1fr;
     gap: 30px;
-}
-
-p{
     padding: 20px;
 }
 
-div{
+@media screen and (min-width: 600px){
+    main{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: repeat(3, 33%);
+        gap: 50px;
+        padding: 50px;
+    }
+    p{
+        grid-column: 1/2;
+        grid-row: 1/4;
+    }
+    .pillOne{
+        grid-column: 2/3;
+        grid-row: 1/2;
+    }
+    .pillTwo{
+        grid-column: 3/4;
+        grid-row: 2/3;
+    }
+
+    .pillThree{
+        grid-column: 2/3;
+        grid-row: 3/4;
+    }
+}
+
+
+
+.pill{
     height:100px;
     background-color: rgb(112, 135, 205);
     border-radius: 100px;
+    width: 100%;
 }
 
-.pillOne, .pillTwo, .pillThree{
-    
+@media screen and (min-width: 600px) {
+    .pill{
+        transform-origin: center center;
+        height: 100%;
+        width: 50%;
+    }
 }
